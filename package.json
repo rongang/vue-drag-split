@@ -1,7 +1,7 @@
 {
   "name": "vue-drag-split",
-  "description": "vue-drag-split",
-  "version": "0.0.0",
+  "description": "vue-drag-split 基于Vue的拖拽分屏组件",
+  "version": "0.0.1",
   "keywords": [
     "drag",
     "split",
