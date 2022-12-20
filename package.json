@@ -1,0 +1,39 @@
+{
+  "name": "vue-drag-split",
+  "description": "vue-drag-split",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "rongang <xuronggang1997@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-drag-split.umd.cjs",
+  "module": "./dist/vue-drag-split.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-drag-split.js",
+      "require": "./dist/vue-drag-split.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:app": "cross-env build_type=app vite build",
+    "build:lib": "cross-env build_type=lib vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "sass": "^1.56.2",
+    "vite": "^4.0.0",
+    "vue": "^3.2.0",
+    "vue-demi": "^0.13.11"
+  },
+  "peerDependencies": {
+    "@types/node": ">= 14",
+    "vue": "^3.2.0"
+  }
+}
