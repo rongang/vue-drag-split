@@ -1,7 +1,9 @@
 ## VueDragSplit
+
 ```text
 基于Vue的拖拽分屏组件
 ```
+
 [查看例子](https://www.baidu.com)
 
 ## 开始
@@ -41,9 +43,9 @@ yarn add vue-drag-split --save
 import {ref} from "@vue/reactivity";
 
 // 引入样式文件
-import "vue-drag-split/style.css";
+import "vue-drag-split/dist/style.css";
 // 引入组件
-import {VueDragSplit} from "vue-drag-split";
+import { VueDragSplit } from "vue-drag-split";
 
 const activeTabKey = ref("");
 const windowList = ref([

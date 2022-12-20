@@ -2,8 +2,17 @@
   "name": "vue-drag-split",
   "description": "vue-drag-split",
   "version": "0.0.0",
+  "keywords": [
+    "drag",
+    "split",
+    "拖拽分屏"
+  ],
   "type": "module",
   "author": "rongang <xuronggang1997@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rongang/vue-drag-split.git"
+  },
   "license": "MIT",
   "files": [
     "dist"
