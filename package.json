@@ -1,7 +1,6 @@
 {
   "name": "vue-drag-split",
   "description": "vue-drag-split",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "author": "rongang <xuronggang1997@gmail.com>",
