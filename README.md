@@ -4,8 +4,8 @@
 基于Vue的拖拽分屏组件
 ```
 
-[查看例子](https://www.baidu.com)
-
+[查看例子](https://rongang.github.io/vue-drag-split/app/index.html)
+![img](./public/demo.png)
 ## 开始
 
 安装
