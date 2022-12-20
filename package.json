@@ -9,14 +9,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-drag-split.umd.cjs",
-  "module": "./dist/vue-drag-split.js",
-  "exports": {
-    ".": {
-      "import": "./dist/vue-drag-split.js",
-      "require": "./dist/vue-drag-split.umd.cjs"
-    }
-  },
+  "main": "./dist/vue-drag-split.js",
   "scripts": {
     "dev": "vite",
     "build:app": "cross-env build_type=app vite build",
