@@ -230,14 +230,19 @@ function labelClick(key, event) {
 }
 function activeTab(key) {
     activeTabKey.value = key;
-    for (const contentEl of componentIns.vnode.el.querySelectorAll(
-        ".split_view_content"
-    )) {
-        if (contentEl.getAttribute("tabviewkey") == key) {
-            contentEl.style.zIndex = 2;
-            continue;
+    const effectDom = componentIns.vnode.el.querySelector(
+        `.split_view_content[tabviewkey='${key}']`
+    );
+    if (effectDom) {
+        for (const contentEl of effectDom.parentElement.querySelectorAll(
+            ".split_view_content"
+        )) {
+            if (contentEl.getAttribute("tabviewkey") == key) {
+                contentEl.style.zIndex = 2;
+                continue;
+            }
+            contentEl.style.zIndex = 1;
         }
-        contentEl.style.zIndex = 1;
     }
     for (const tab of componentIns.vnode.el.querySelectorAll(
         ".header_item[tabkey]"
