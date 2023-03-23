@@ -427,8 +427,8 @@ function addTabEl(tabWrapper, tab) {
 		tabWrapper.appendChild(tab);
 	}
 
-	console.log("tabWrapper :>> ", [tabWrapper]);
-	console.log("tabWrapper :>> ", [tabWrapper.parentElement]);
+	// console.log("tabWrapper :>> ", [tabWrapper]);
+	// console.log("tabWrapper :>> ", [tabWrapper.parentElement]);
 }
 
 // 创建布局 移动目标dom
@@ -625,10 +625,10 @@ const templateLayout = (win) => {
 function scrollLabelBox(e, direction = "pre") {
 	const labelParentWrapper = getParentElByClname(e.target, "split_view_label_wrapper");
 	const labelWrapper = labelParentWrapper.querySelector(".split_view_label_box.flex");
-	console.log("labelWrapper :>> ", labelWrapper);
-	console.log("offsetX :>> ", labelWrapper.offsetX);
-	console.log("left :>> ", labelWrapper.left);
-	console.log("getBoundingClientRect :>> ", labelWrapper.getBoundingClientRect());
+	// console.log("labelWrapper :>> ", labelWrapper);
+	// console.log("offsetX :>> ", labelWrapper.offsetX);
+	// console.log("left :>> ", labelWrapper.left);
+	// console.log("getBoundingClientRect :>> ", labelWrapper.getBoundingClientRect());
 	switch (direction) {
 		case "pre":
 			labelWrapper.style.transform = `translateX(200px)`;
