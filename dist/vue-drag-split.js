@@ -1775,7 +1775,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       const f = Array.from((i == null ? void 0 : i.children) ?? []).find(
         (p) => p.className.includes("add_btn_wrapper")
       );
-      f ? i.insertBefore(a, f) : i.appendChild(a), console.log("tabWrapper :>> ", [i]), console.log("tabWrapper :>> ", [i.parentElement]);
+      f ? i.insertBefore(a, f) : i.appendChild(a);
     }
     function qt(i, a) {
       let f = ".horizontal.split_pane", p = M(i, "split_pane"), w = M(i, "split_container"), d = w.querySelector(f + ".split_paneL"), T = w.querySelector(f + ".split_paneR"), b;
