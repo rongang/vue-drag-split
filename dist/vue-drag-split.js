@@ -1,4 +1,4 @@
-import { openBlock as ne, createElementBlock as Fe, normalizeClass as yt, unref as P, renderSlot as Te, toRefs as Qn, ref as fe, watch as Ye, normalizeStyle as De, createVNode as Zn, withCtx as ht, createBlock as _t, createCommentVNode as Xe, getCurrentInstance as er, useSlots as tr, h as C, onMounted as nr, reactive as rr, createElementVNode as Bt, render as or } from "vue";
+import { openBlock as ne, createElementBlock as Fe, normalizeClass as yt, unref as P, renderSlot as Te, toRefs as Qn, ref as fe, watch as Ye, normalizeStyle as De, createVNode as Zn, withCtx as ht, createBlock as _t, createCommentVNode as Xe, getCurrentInstance as er, useSlots as tr, h as N, onMounted as nr, reactive as rr, createElementVNode as Bt, render as or } from "vue";
 const sr = {}, ir = /* @__PURE__ */ Object.assign(sr, {
   __name: "resizer",
   props: ["split"],
@@ -61,7 +61,7 @@ const ke = () => {
 }, pr = () => !1, dr = /^on[^a-z]/, hr = (e) => dr.test(e), J = Object.assign, _r = (e, t) => {
   const n = e.indexOf(t);
   n > -1 && e.splice(n, 1);
-}, gr = Object.prototype.hasOwnProperty, V = (e, t) => gr.call(e, t), O = Array.isArray, ye = (e) => ot(e) === "[object Map]", mr = (e) => ot(e) === "[object Set]", I = (e) => typeof e == "function", B = (e) => typeof e == "string", Ct = (e) => typeof e == "symbol", U = (e) => e !== null && typeof e == "object", wr = (e) => U(e) && I(e.then) && I(e.catch), br = Object.prototype.toString, ot = (e) => br.call(e), an = (e) => ot(e).slice(8, -1), vr = (e) => ot(e) === "[object Object]", Ot = (e) => B(e) && e !== "NaN" && e[0] !== "-" && "" + parseInt(e, 10) === e, Er = (e) => {
+}, gr = Object.prototype.hasOwnProperty, V = (e, t) => gr.call(e, t), O = Array.isArray, ye = (e) => ot(e) === "[object Map]", mr = (e) => ot(e) === "[object Set]", I = (e) => typeof e == "function", B = (e) => typeof e == "string", Ct = (e) => typeof e == "symbol", U = (e) => e !== null && typeof e == "object", wr = (e) => U(e) && I(e.then) && I(e.catch), vr = Object.prototype.toString, ot = (e) => vr.call(e), an = (e) => ot(e).slice(8, -1), br = (e) => ot(e) === "[object Object]", Ot = (e) => B(e) && e !== "NaN" && e[0] !== "-" && "" + parseInt(e, 10) === e, Er = (e) => {
   const t = /* @__PURE__ */ Object.create(null);
   return (n) => t[n] || (t[n] = e(n));
 }, yr = Er((e) => e.charAt(0).toUpperCase() + e.slice(1)), Ie = (e, t) => !Object.is(e, t), Nr = (e, t, n) => {
@@ -152,10 +152,10 @@ function K(e, t, n) {
     let r = o.get(n);
     r || o.set(n, r = Me());
     const s = process.env.NODE_ENV !== "production" ? { effect: z, target: e, type: t, key: n } : void 0;
-    bt(r, s);
+    vt(r, s);
   }
 }
-function bt(e, t) {
+function vt(e, t) {
   let n = !1;
   Re <= mt ? fn(e) || (e.n |= oe, n = !un(e)) : n = !e.has(z), n && (e.add(z), z.deps.push(e), process.env.NODE_ENV !== "production" && z.onTrack && z.onTrack(Object.assign({ effect: z }, t)));
 }
@@ -168,8 +168,8 @@ function se(e, t, n, o, r, s) {
     l = [...c.values()];
   else if (n === "length" && O(e)) {
     const h = Sr(o);
-    c.forEach((m, S) => {
-      (S === "length" || S >= h) && l.push(m);
+    c.forEach((m, C) => {
+      (C === "length" || C >= h) && l.push(m);
     });
   } else
     switch (n !== void 0 && l.push(c.get(n)), t) {
@@ -185,15 +185,15 @@ function se(e, t, n, o, r, s) {
     }
   const u = process.env.NODE_ENV !== "production" ? { target: e, type: t, key: n, newValue: o, oldValue: r, oldTarget: s } : void 0;
   if (l.length === 1)
-    l[0] && (process.env.NODE_ENV !== "production" ? be(l[0], u) : be(l[0]));
+    l[0] && (process.env.NODE_ENV !== "production" ? ve(l[0], u) : ve(l[0]));
   else {
     const h = [];
     for (const m of l)
       m && h.push(...m);
-    process.env.NODE_ENV !== "production" ? be(Me(h), u) : be(Me(h));
+    process.env.NODE_ENV !== "production" ? ve(Me(h), u) : ve(Me(h));
   }
 }
-function be(e, t) {
+function ve(e, t) {
   const n = O(e) ? e : [...e];
   for (const o of n)
     o.computed && Jt(o, t);
@@ -232,7 +232,7 @@ function xt(e = !1, t = !1) {
       return e;
     if (r === "__v_isShallow")
       return t;
-    if (r === "__v_raw" && s === (e ? t ? vn : bn : t ? Xr : wn).get(o))
+    if (r === "__v_raw" && s === (e ? t ? bn : vn : t ? Xr : wn).get(o))
       return o;
     const c = O(o);
     if (!e && c && V(Yt, r))
@@ -334,9 +334,9 @@ function Le(e, t, n) {
     const r = this.__v_raw, s = g(r), c = ye(s), l = e === "entries" || e === Symbol.iterator && c, u = e === "keys" && c, h = r[e](...o), m = n ? Vt : t ? Pt : Ae;
     return !t && K(s, "iterate", u ? wt : pe), {
       next() {
-        const { value: S, done: x } = h.next();
-        return x ? { value: S, done: x } : {
-          value: l ? [m(S[0]), m(S[1])] : m(S),
+        const { value: C, done: x } = h.next();
+        return x ? { value: C, done: x } : {
+          value: l ? [m(C[0]), m(C[1])] : m(C),
           done: x
         };
       },
@@ -441,7 +441,7 @@ function mn(e, t, n) {
     console.warn(`Reactive ${r} contains both the raw and reactive versions of the same object${r === "Map" ? " as keys" : ""}, which can lead to inconsistencies. Avoid differentiating between the raw and reactive versions of an object and only use the reactive version if possible.`);
   }
 }
-const wn = /* @__PURE__ */ new WeakMap(), Xr = /* @__PURE__ */ new WeakMap(), bn = /* @__PURE__ */ new WeakMap(), vn = /* @__PURE__ */ new WeakMap();
+const wn = /* @__PURE__ */ new WeakMap(), Xr = /* @__PURE__ */ new WeakMap(), vn = /* @__PURE__ */ new WeakMap(), bn = /* @__PURE__ */ new WeakMap();
 function Qr(e) {
   switch (e) {
     case "Object":
@@ -463,10 +463,10 @@ function En(e) {
   return Ce(e) ? e : Rt(e, !1, Kr, Gr, wn);
 }
 function yn(e) {
-  return Rt(e, !0, gn, Jr, bn);
+  return Rt(e, !0, gn, Jr, vn);
 }
 function Be(e) {
-  return Rt(e, !0, Hr, Yr, vn);
+  return Rt(e, !0, Hr, Yr, bn);
 }
 function Rt(e, t, n, o, r) {
   if (!U(e))
@@ -503,19 +503,19 @@ function eo(e) {
 }
 const Ae = (e) => U(e) ? En(e) : e, Pt = (e) => U(e) ? yn(e) : e;
 function to(e) {
-  re && z && (e = g(e), process.env.NODE_ENV !== "production" ? bt(e.dep || (e.dep = Me()), {
+  re && z && (e = g(e), process.env.NODE_ENV !== "production" ? vt(e.dep || (e.dep = Me()), {
     target: e,
     type: "get",
     key: "value"
-  }) : bt(e.dep || (e.dep = Me())));
+  }) : vt(e.dep || (e.dep = Me())));
 }
 function no(e, t) {
-  e = g(e), e.dep && (process.env.NODE_ENV !== "production" ? be(e.dep, {
+  e = g(e), e.dep && (process.env.NODE_ENV !== "production" ? ve(e.dep, {
     target: e,
     type: "set",
     key: "value",
     newValue: t
-  }) : be(e.dep));
+  }) : ve(e.dep));
 }
 function F(e) {
   return !!(e && e.__v_isRef === !0);
@@ -709,9 +709,9 @@ function Cn(e, t, n, o = !0) {
       return;
     }
   }
-  bo(e, n, r, o);
+  vo(e, n, r, o);
 }
-function bo(e, t, n, o = !0) {
+function vo(e, t, n, o = !0) {
   if (process.env.NODE_ENV !== "production") {
     const r = Sn[t];
     if (n && po(n), $(`Unhandled error${r ? ` during execution of ${r}` : ""}`), n && ho(), o)
@@ -720,14 +720,14 @@ function bo(e, t, n, o = !0) {
   } else
     console.error(e);
 }
-let et = !1, vt = !1;
+let et = !1, bt = !1;
 const L = [];
 let te = 0;
 const Se = [];
 let G = null, ee = 0;
 const On = /* @__PURE__ */ Promise.resolve();
 let $t = null;
-const vo = 100;
+const bo = 100;
 function Eo(e) {
   const t = $t || On;
   return e ? t.then(this ? e.bind(this) : e) : t;
@@ -744,7 +744,7 @@ function Tt(e) {
   (!L.length || !L.includes(e, et && e.allowRecurse ? te + 1 : te)) && (e.id == null ? L.push(e) : L.splice(yo(e.id), 0, e), xn());
 }
 function xn() {
-  !et && !vt && (vt = !0, $t = On.then(Dn));
+  !et && !bt && (bt = !0, $t = On.then(Dn));
 }
 function Vn(e) {
   O(e) ? Se.push(...e) : (!G || !G.includes(e, e.allowRecurse ? ee + 1 : ee)) && Se.push(e), xn();
@@ -772,7 +772,7 @@ const ze = (e) => e.id == null ? 1 / 0 : e.id, So = (e, t) => {
   return n;
 };
 function Dn(e) {
-  vt = !1, et = !0, process.env.NODE_ENV !== "production" && (e = e || /* @__PURE__ */ new Map()), L.sort(So);
+  bt = !1, et = !0, process.env.NODE_ENV !== "production" && (e = e || /* @__PURE__ */ new Map()), L.sort(So);
   const t = process.env.NODE_ENV !== "production" ? (n) => Rn(e, n) : ke;
   try {
     for (te = 0; te < L.length; te++) {
@@ -792,7 +792,7 @@ function Rn(e, t) {
     e.set(t, 1);
   else {
     const n = e.get(t);
-    if (n > vo) {
+    if (n > bo) {
       const o = t.ownerInstance, r = o && zn(o.type);
       return $(`Maximum recursive updates exceeded${r ? ` in component <${r}>` : ""}. This means you have a reactive effect that is mutating its own dependencies and thus recursively triggering itself. Possible sources include component template, render function, updated hook or watcher source function.`), !0;
     } else
@@ -873,60 +873,60 @@ function $o(e, t, n) {
 }
 function Pn(e, t, { immediate: n, deep: o, flush: r, onTrack: s, onTrigger: c } = Z) {
   process.env.NODE_ENV !== "production" && !t && (n !== void 0 && $('watch() "immediate" option is only respected when using the watch(source, callback, options?) signature.'), o !== void 0 && $('watch() "deep" option is only respected when using the watch(source, callback, options?) signature.'));
-  const l = (b) => {
-    $("Invalid watch source: ", b, "A watch source can only be a getter/effect function, a ref, a reactive object, or an array of these types.");
+  const l = (v) => {
+    $("Invalid watch source: ", v, "A watch source can only be a getter/effect function, a ref, a reactive object, or an array of these types.");
   }, u = _e;
-  let h, m = !1, S = !1;
-  if (F(e) ? (h = () => e.value, m = Qe(e)) : Ne(e) ? (h = () => e, o = !0) : O(e) ? (S = !0, m = e.some((b) => Ne(b) || Qe(b)), h = () => e.map((b) => {
-    if (F(b))
-      return b.value;
-    if (Ne(b))
-      return ve(b);
-    if (I(b))
-      return he(b, u, 2);
-    process.env.NODE_ENV !== "production" && l(b);
+  let h, m = !1, C = !1;
+  if (F(e) ? (h = () => e.value, m = Qe(e)) : Ne(e) ? (h = () => e, o = !0) : O(e) ? (C = !0, m = e.some((v) => Ne(v) || Qe(v)), h = () => e.map((v) => {
+    if (F(v))
+      return v.value;
+    if (Ne(v))
+      return be(v);
+    if (I(v))
+      return he(v, u, 2);
+    process.env.NODE_ENV !== "production" && l(v);
   })) : I(e) ? t ? h = () => he(e, u, 2) : h = () => {
     if (!(u && u.isUnmounted))
       return x && x(), Ge(e, u, 3, [k]);
   } : (h = ke, process.env.NODE_ENV !== "production" && l(e)), t && o) {
-    const b = h;
-    h = () => ve(b());
+    const v = h;
+    h = () => be(v());
   }
-  let x, k = (b) => {
-    x = N.onStop = () => {
-      he(b, u, 4);
+  let x, k = (v) => {
+    x = S.onStop = () => {
+      he(v, u, 4);
     };
   }, X;
   if (ts)
     if (k = ke, t ? n && Ge(t, u, 3, [
       h(),
-      S ? [] : void 0,
+      C ? [] : void 0,
       k
     ]) : h(), r === "sync") {
-      const b = is();
-      X = b.__watcherHandles || (b.__watcherHandles = []);
+      const v = is();
+      X = v.__watcherHandles || (v.__watcherHandles = []);
     } else
       return ke;
-  let D = S ? new Array(e.length).fill(Ue) : Ue;
+  let D = C ? new Array(e.length).fill(Ue) : Ue;
   const _ = () => {
-    if (N.active)
+    if (S.active)
       if (t) {
-        const b = N.run();
-        (o || m || (S ? b.some((H, it) => Ie(H, D[it])) : Ie(b, D))) && (x && x(), Ge(t, u, 3, [
-          b,
-          D === Ue ? void 0 : S && D[0] === Ue ? [] : D,
+        const v = S.run();
+        (o || m || (C ? v.some((H, it) => Ie(H, D[it])) : Ie(v, D))) && (x && x(), Ge(t, u, 3, [
+          v,
+          D === Ue ? void 0 : C && D[0] === Ue ? [] : D,
           k
-        ]), D = b);
+        ]), D = v);
       } else
-        N.run();
+        S.run();
   };
   _.allowRecurse = !!t;
   let j;
   r === "sync" ? j = _ : r === "post" ? j = () => on(_, u && u.suspense) : (_.pre = !0, u && (_.id = u.uid), j = () => Tt(_));
-  const N = new Rr(h, j);
-  process.env.NODE_ENV !== "production" && (N.onTrack = s, N.onTrigger = c), t ? n ? _() : D = N.run() : r === "post" ? on(N.run.bind(N), u && u.suspense) : N.run();
+  const S = new Rr(h, j);
+  process.env.NODE_ENV !== "production" && (S.onTrack = s, S.onTrigger = c), t ? n ? _() : D = S.run() : r === "post" ? on(S.run.bind(S), u && u.suspense) : S.run();
   const ge = () => {
-    N.stop(), u && u.scope && _r(u.scope.effects, N);
+    S.stop(), u && u.scope && _r(u.scope.effects, S);
   };
   return X && X.push(ge), ge;
 }
@@ -948,21 +948,21 @@ function Io(e, t) {
     return o;
   };
 }
-function ve(e, t) {
+function be(e, t) {
   if (!U(e) || e.__v_skip || (t = t || /* @__PURE__ */ new Set(), t.has(e)))
     return e;
   if (t.add(e), F(e))
-    ve(e.value, t);
+    be(e.value, t);
   else if (O(e))
     for (let n = 0; n < e.length; n++)
-      ve(e[n], t);
+      be(e[n], t);
   else if (mr(e) || ye(e))
     e.forEach((n) => {
-      ve(n, t);
+      be(n, t);
     });
-  else if (vr(e))
+  else if (br(e))
     for (const n in e)
-      ve(e[n], t);
+      be(e[n], t);
   return e;
 }
 const Mo = Symbol(), Et = (e) => e ? es(e) ? ns(e) || e.proxy : Et(e.parent) : null, $e = /* @__PURE__ */ J(/* @__PURE__ */ Object.create(null), {
@@ -1012,11 +1012,11 @@ const Mo = Symbol(), Et = (e) => e ? es(e) ? ns(e) || e.proxy : Et(e.parent) : n
       }
     }
     const m = $e[t];
-    let S, x;
+    let C, x;
     if (m)
       return t === "$attrs" && (K(e, "get", t), process.env.NODE_ENV !== "production" && void 0), m(e);
-    if ((S = l.__cssModules) && (S = S[t]))
-      return S;
+    if ((C = l.__cssModules) && (C = C[t]))
+      return C;
     if (n !== Z && V(n, t))
       return c[t] = 4, n[t];
     if (x = u.config.globalProperties, V(x, t))
@@ -1388,7 +1388,7 @@ const ls = ["split"], as = {
       },
       { immediate: !0 }
     );
-    function S() {
+    function C() {
       let _ = null;
       return (j) => {
         _ || (_ = setTimeout(() => {
@@ -1396,7 +1396,7 @@ const ls = ["split"], as = {
         }, 100));
       };
     }
-    const x = new S();
+    const x = new C();
     function k() {
       h.value = !0;
     }
@@ -1406,14 +1406,14 @@ const ls = ["split"], as = {
     function D(_) {
       if (_.buttons === 0 || _.which === 0 || !h.value)
         return;
-      let j = 0, N = _.currentTarget;
+      let j = 0, S = _.currentTarget;
       if (c.value === "horizontal")
-        for (; N; )
-          j += N.offsetLeft, N = N.offsetParent;
+        for (; S; )
+          j += S.offsetLeft, S = S.offsetParent;
       else
-        for (; N; )
-          j += N.offsetTop, N = N.offsetParent;
-      const ge = c.value === "horizontal" ? _.pageX : _.pageY, b = c.value === "horizontal" ? _.currentTarget.offsetWidth : _.currentTarget.offsetHeight, H = Math.floor((ge - j) / b * 1e4) / 100;
+        for (; S; )
+          j += S.offsetTop, S = S.offsetParent;
+      const ge = c.value === "horizontal" ? _.pageX : _.pageY, v = c.value === "horizontal" ? _.currentTarget.offsetWidth : _.currentTarget.offsetHeight, H = Math.floor((ge - j) / v * 1e4) / 100;
       H > r.value && H < 100 - r.value && (m.value = H), x(() => {
         t("resize", _);
       });
@@ -1494,10 +1494,10 @@ const ae = {
 }, q = {
   horizontal: "horizontal",
   vertical: "vertical"
-}, bs = {};
+}, vs = {};
 const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
   name: "VueDragSplit"
-}, vs = /* @__PURE__ */ Object.assign(ms, {
+}, bs = /* @__PURE__ */ Object.assign(ms, {
   props: {
     showPlaceHolder: {
       type: Boolean,
@@ -1571,15 +1571,15 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       activeLabelClassName: u,
       onCloseWindow: h,
       canCloseWindow: m,
-      activeTabKeySync: S,
+      activeTabKeySync: C,
       windowListSync: x,
       layoutClass: k,
       generateWindowConfig: X
-    } = e, D = er(), { AddBtn: _, CloseBtn: j, Tab: N, TabActions: ge, TabView: b } = tr();
+    } = e, D = er(), { AddBtn: _, CloseBtn: j, Tab: S, TabActions: ge, TabView: v } = tr();
     function H(i, a) {
       return i && i(a)[0];
     }
-    const it = C(
+    const it = N(
       "div",
       {
         class: "add_btn",
@@ -1587,12 +1587,8 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
           je();
         }
       },
-      C("div", { title: "新建窗口" }, "+")
-    ), qn = C("div", { class: "close_inner", title: "关闭窗口" }, "x"), Kn = (i) => C(
-      "span",
-      { style: { fontSize: "12px", color: "white" } },
-      i.label
-    ), Mt = C(
+      N("div", { title: "新建窗口" }, "+")
+    ), qn = N("div", { class: "close_inner", title: "关闭窗口" }, "x"), Kn = (i) => N("span", { style: { fontSize: "12px", color: "white" } }, i.label), Mt = N(
       "svg",
       {
         t: "1671501618431",
@@ -1604,13 +1600,13 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         width: "20",
         height: "20"
       },
-      C("path", {
+      N("path", {
         d: "M252.068571 906.496h520.283429c89.581714 0 134.144-44.562286 134.144-132.845714V250.331429c0-88.283429-44.562286-132.845714-134.144-132.845715H252.068571c-89.142857 0-134.582857 44.141714-134.582857 132.845715V773.668571c0 88.704 45.44 132.845714 134.582857 132.845715z m1.28-68.992c-42.843429 0-66.852571-22.710857-66.852571-67.291429V253.805714c0-44.580571 24.009143-67.291429 66.852571-67.291428h222.866286v651.008z m517.723429-651.008c42.422857 0 66.432 22.710857 66.432 67.291429V770.194286c0 44.580571-24.009143 67.291429-66.432 67.291428H548.205714V186.496z",
         "p-id": "2712",
         fill: "#ffffff"
       })
     ), Hn = (i) => [
-      C(
+      N(
         "div",
         {
           class: "action_btn",
@@ -1621,7 +1617,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         },
         Mt
       ),
-      C(
+      N(
         "div",
         {
           class: "action_btn",
@@ -1633,7 +1629,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         },
         Mt
       )
-    ], Wn = (i) => C("div", null, [C("h3", null, "标签" + i.key + "的默认内容")]), W = fe([]);
+    ], Wn = (i) => N("div", null, [N("h3", null, "标签" + i.key + "的默认内容")]), W = fe([]);
     Ye(
       W,
       (i) => {
@@ -1646,7 +1642,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
           je(i);
     });
     const ie = fe("");
-    ie.value = S, Ye(ie, (i) => {
+    ie.value = C, Ye(ie, (i) => {
       n("update:activeTabKeySync", i);
     });
     function Oe(i) {
@@ -1657,22 +1653,16 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
     }
     function me(i) {
       ie.value = i;
-      const a = D.vnode.el.querySelector(
-        `.split_view_content[tabviewkey='${i}']`
-      );
+      const a = D.vnode.el.querySelector(`.split_view_content[tabviewkey='${i}']`);
       if (a)
-        for (const f of a.parentElement.querySelectorAll(
-          ".split_view_content"
-        )) {
+        for (const f of a.parentElement.querySelectorAll(".split_view_content")) {
           if (f.getAttribute("tabviewkey") == i) {
             f.style.zIndex = 2;
             continue;
           }
           f.style.zIndex = 1;
         }
-      for (const f of D.vnode.el.querySelectorAll(
-        ".header_item[tabkey]"
-      )) {
+      for (const f of D.vnode.el.querySelectorAll(".header_item[tabkey]")) {
         if (f.getAttribute("tabkey") == i) {
           f.classList.add("label_active", u);
           continue;
@@ -1694,9 +1684,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
     });
     function Ln(i) {
       const { target: a, x: f, y: p } = i;
-      y.isUpdating = !0, y.target = a, y.tabKey = a.getAttribute("tabKey"), y.tabEls = [
-        ...a.parentNode.querySelectorAll(".header_item[tabkey]")
-      ];
+      y.isUpdating = !0, y.target = a, y.tabKey = a.getAttribute("tabKey"), y.tabEls = [...a.parentNode.querySelectorAll(".header_item[tabkey]")];
     }
     function Ft(i) {
       if (i.preventDefault(), !y.isUpdating)
@@ -1707,35 +1695,35 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       if (!w)
         return;
       y.respectLayout = w;
-      const d = w.getBoundingClientRect(), T = D.vnode.el.getBoundingClientRect(), v = d.x - T.x, E = d.y - T.y;
+      const d = w.getBoundingClientRect(), T = D.vnode.el.getBoundingClientRect(), b = d.x - T.x, E = d.y - T.y;
       if (f = f - T.x, p = p - T.y, w.className.includes("split_view_label_wrapper")) {
         ce.value = {
           top: E,
-          left: v,
+          left: b,
           height: d.height,
           width: d.width
         }, y.dropPosition = "inner";
         return;
       } else if (w.className.includes("split_view_content")) {
         const R = d.height / 3, le = d.width / 3;
-        f > v && f < v + d.width && p > E && p < E + R ? (ce.value = {
+        f > b && f < b + d.width && p > E && p < E + R ? (ce.value = {
           top: E,
-          left: v,
+          left: b,
           height: d.height / 2,
           width: d.width
-        }, y.dropPosition = "top") : f > v && f < v + d.width && p > E + R * 2 && p < E + d.height ? (ce.value = {
+        }, y.dropPosition = "top") : f > b && f < b + d.width && p > E + R * 2 && p < E + d.height ? (ce.value = {
           top: E + d.height / 2,
-          left: v,
+          left: b,
           height: d.height / 2,
           width: d.width
-        }, y.dropPosition = "bottom") : f > v + le * 2 && f < v + d.width && p > E + R && p < E + R * 2 ? (ce.value = {
+        }, y.dropPosition = "bottom") : f > b + le * 2 && f < b + d.width && p > E + R && p < E + R * 2 ? (ce.value = {
           top: E,
-          left: v + d.width / 2,
+          left: b + d.width / 2,
           height: d.height,
           width: d.width / 2
-        }, y.dropPosition = "right") : f > v && f < v + le && p > E && p < E + R * 2 && (ce.value = {
+        }, y.dropPosition = "right") : f > b && f < b + le && p > E && p < E + R * 2 && (ce.value = {
           top: E,
-          left: v,
+          left: b,
           height: d.height,
           width: d.width / 2
         }, y.dropPosition = "left");
@@ -1764,11 +1752,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       const E = [...M(
         y.target,
         "split_content_wrapper"
-      ).querySelectorAll(
-        ".split_view_content"
-      )].find(
-        (le) => le.getAttribute("tabViewKey") === y.tabKey
-      );
+      ).querySelectorAll(".split_view_content")].find((le) => le.getAttribute("tabViewKey") === y.tabKey);
       if (y.tabView = E, y.tabEls.length == 1 && y.tabView == y.respectLayout || d == xe.tab && w == M(y.target, "split_view_label_wrapper"))
         return;
       Lt({}, y.target), me(y.tabKey);
@@ -1791,34 +1775,24 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       const f = Array.from((i == null ? void 0 : i.children) ?? []).find(
         (p) => p.className.includes("add_btn_wrapper")
       );
-      f ? i.insertBefore(a, f) : i.appendChild(a);
+      f ? i.insertBefore(a, f) : i.appendChild(a), console.log("tabWrapper :>> ", [i]), console.log("tabWrapper :>> ", [i.parentElement]);
     }
     function qt(i, a) {
-      let f = ".horizontal.split_pane", p = M(i, "split_pane"), w = M(
-        i,
-        "split_container"
-      ), d = w.querySelector(
-        f + ".split_paneL"
-      ), T = w.querySelector(
-        f + ".split_paneR"
-      ), v;
-      ["left", "right"].includes(a.dropPosition) ? v = q.horizontal : ["top", "bottom"].includes(a.dropPosition) && (v = q.vertical);
-      const E = C(
+      let f = ".horizontal.split_pane", p = M(i, "split_pane"), w = M(i, "split_container"), d = w.querySelector(f + ".split_paneL"), T = w.querySelector(f + ".split_paneR"), b;
+      ["left", "right"].includes(a.dropPosition) ? b = q.horizontal : ["top", "bottom"].includes(a.dropPosition) && (b = q.vertical);
+      const E = N(
         ln,
         {
           onResize: zt,
           minPercent: 20,
-          split: v,
+          split: b,
           defaultPercent: 50
         },
         { paneR: () => Ht(null, null) }
       );
       E.appContext = D.appContext;
       let R = we(E);
-      R.querySelector(`.${v}.split_pane.split_paneL`).appendChild(p.children[0]), lt(
-        R.querySelector(".split_paneR .split_view_label_wrapper"),
-        a.target
-      ), R.querySelector(".split_paneR .split_view_content_wrapper").appendChild(a.tabView), p.appendChild(R), d = R.children[0], T = R.children[2], requestAnimationFrame(() => {
+      R.querySelector(`.${b}.split_pane.split_paneL`).appendChild(p.children[0]), lt(R.querySelector(".split_paneR .split_view_label_wrapper"), a.target), R.querySelector(".split_paneR .split_view_content_wrapper").appendChild(a.tabView), p.appendChild(R), d = R.children[0], T = R.children[2], requestAnimationFrame(() => {
         switch (a.dropPosition) {
           case ae.top:
             Kt(d, T);
@@ -1837,7 +1811,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       let f = i.children[0];
       i.appendChild(a.children[0]), a.appendChild(f);
     }
-    const Un = (i) => C(
+    const Un = (i) => N(
       "div",
       {
         class: "close_btn",
@@ -1846,7 +1820,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         }
       },
       H(j, i) || s(i) || qn
-    ), at = (i) => C(
+    ), at = (i) => N(
       "div",
       {
         class: "header_item flex a-c",
@@ -1857,11 +1831,8 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         },
         tabKey: i.key
       },
-      [
-        H(N, i) || c(i) || Kn(i),
-        Un(i)
-      ]
-    ), ut = (i) => C(
+      [H(S, i) || c(i) || Kn(i), Un(i)]
+    ), ut = (i) => N(
       "div",
       {
         class: "split_view_content",
@@ -1870,10 +1841,29 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
           At(i.key);
         }
       },
-      [H(b, i) || l(i) || Wn(i)]
-    ), Ht = (i, a) => C("div", { class: "split_view" }, [
-      C("div", { class: "split_content_wrapper flex column" }, [
-        C(
+      [H(v, i) || l(i) || Wn(i)]
+    );
+    N(
+      "svg",
+      {
+        t: "1679533237927",
+        class: "icon",
+        viewBox: "0 0 1024 1024",
+        version: "1.1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "p-id": "2333",
+        width: "18",
+        height: "18"
+      },
+      N("path", {
+        d: "M320 885.333333c-8.533333 0-17.066667-4.266667-23.466667-10.666666-12.8-12.8-10.666667-34.133333 2.133334-44.8L654.933333 512 298.666667 194.133333c-12.8-10.666667-14.933333-32-2.133334-44.8 10.666667-12.8 32-14.933333 44.8-2.133333l384 341.333333c6.4 6.4 10.666667 14.933333 10.666667 23.466667 0 8.533333-4.266667 17.066667-10.666667 23.466667l-384 341.333333c-6.4 6.4-12.8 8.533333-21.333333 8.533333z",
+        fill: "#ffffff",
+        "p-id": "2334"
+      })
+    );
+    const Ht = (i, a) => N("div", { class: "split_view" }, [
+      N("div", { class: "split_content_wrapper flex column" }, [
+        N(
           "div",
           {
             class: "split_view_label_wrapper flex",
@@ -1881,20 +1871,20 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
             ondrop: jt
           },
           [
-            C("div", { class: "split_view_label_box flex" }, [
+            N("div", { class: "split_view_label_box flex" }, [
               i,
-              C("div", { class: "add_btn_wrapper" }, [
+              N("div", { class: "add_btn_wrapper" }, [
                 H(_) || r(Oe()) || it
               ])
             ]),
-            C(
+            N(
               "div",
               { class: "split_view_label_action_wrapper flex" },
               H(ge, Oe()) || o(Oe()) || Hn(Oe())
             )
           ]
         ),
-        C(
+        N(
           "div",
           {
             class: "split_view_content_wrapper",
@@ -1905,10 +1895,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         )
       ])
     ]), kn = (i) => {
-      const a = Ht(
-        at(i),
-        ut(i)
-      ), f = C(
+      const a = Ht(at(i), ut(i)), f = N(
         ln,
         {
           onResize: zt,
@@ -1930,9 +1917,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
         throw new Error("params win is invalid");
       if (W.value.push(i), i = W.value.find((a) => a.key === i.key), document.querySelector(".split_container")) {
         const a = M(
-          D.vnode.el.querySelector(
-            `.header_item[tabkey='${ie.value}']`
-          ),
+          D.vnode.el.querySelector(`.header_item[tabkey='${ie.value}']`),
           "split_content_wrapper"
         );
         lt(
@@ -1951,9 +1936,7 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       if (i = i || X(), !i || !i.key)
         throw new Error("params win is invalid");
       const f = we(at(i)), p = we(ut(i)), w = M(
-        D.vnode.el.querySelector(
-          `.header_item[tabkey='${ie.value}']`
-        ),
+        D.vnode.el.querySelector(`.header_item[tabkey='${ie.value}']`),
         "split_content_wrapper"
       );
       qt(w, {
@@ -1971,26 +1954,22 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       activeTab: me
     });
     async function Wt(i, a, f = !1) {
-      var T, v;
+      var T, b;
       if ((T = a == null ? void 0 : a.stopPropagation) == null || T.call(a), a = a || {
-        target: D.vnode.el.querySelector(
-          `.header_item[tabkey='${i.key}']`
-        )
+        target: D.vnode.el.querySelector(`.header_item[tabkey='${i.key}']`)
       }, !f && !await m(i, a))
         return;
       Lt(i, a.target);
-      const p = M(a.target, "header_item"), w = p.getAttribute("tabkey"), d = Array.from(
-        ((v = p.parentNode.parentNode.nextElementSibling) == null ? void 0 : v.children) ?? []
-      ).find((E) => E.getAttribute("tabviewkey") == w);
+      const p = M(a.target, "header_item"), w = p.getAttribute("tabkey"), d = Array.from(((b = p.parentNode.parentNode.nextElementSibling) == null ? void 0 : b.children) ?? []).find(
+        (E) => E.getAttribute("tabviewkey") == w
+      );
       p.parentNode.removeChild(p), d.parentNode.removeChild(d), Gn(i), n("closeWindow", i, a);
     }
     function Lt(i, a) {
-      const f = M(a, "split_container"), p = f.parentNode, w = M(a, "split_pane"), d = w.className.includes(
-        q.vertical
-      ) ? q.vertical : q.horizontal, T = w.className.includes("split_paneL") ? "left" : "right";
+      const f = M(a, "split_container"), p = f.parentNode, w = M(a, "split_pane"), d = w.className.includes(q.vertical) ? q.vertical : q.horizontal, T = w.className.includes("split_paneL") ? "left" : "right";
       requestAnimationFrame(() => {
-        var v;
-        if (!((v = w == null ? void 0 : w.querySelector(".split_view_content_wrapper")) != null && v.firstElementChild)) {
+        var b;
+        if (!((b = w == null ? void 0 : w.querySelector(".split_view_content_wrapper")) != null && b.firstElementChild)) {
           const E = T == "left" ? 2 : 0, R = f.children[E];
           if (R) {
             switch (d) {
@@ -2020,26 +1999,16 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
       W.value = W.value.filter((f) => f.key != i.key), i.key == ie.value && me(((a = W.value.at(-1)) == null ? void 0 : a.key) ?? "-1");
     }
     function Jn(i) {
-      const a = document.querySelectorAll(
-        ".split_container:has(.split_container)"
-      );
+      const a = document.querySelectorAll(".split_container:has(.split_container)");
       for (const p of a)
-        p.children.length == 1 && (p.parentNode.appendChild(
-          p.querySelector(".split_container")
-        ), p.parentNode.removeChild(p));
-      const f = document.querySelectorAll(
-        ".split_pane:has(.split_pane)"
-      );
+        p.children.length == 1 && (p.parentNode.appendChild(p.querySelector(".split_container")), p.parentNode.removeChild(p));
+      const f = document.querySelectorAll(".split_pane:has(.split_pane)");
       for (const p of f)
         p.firstElementChild.children.length == 1 && (p.appendChild(p.querySelector(".split_view")), p.removeChild(p.querySelector(".split_container")));
     }
     function Yn(i) {
-      var T, v;
-      const a = [...i.children], f = a.find((E) => E.className.includes("split_paneL")), p = a.find((E) => E.className.includes("split_paneR")), w = !((T = f == null ? void 0 : f.querySelector(
-        ".split_view_content_wrapper"
-      )) != null && T.firstElementChild), d = !((v = p == null ? void 0 : p.querySelector(
-        ".split_view_content_wrapper"
-      )) != null && v.firstElementChild);
+      var T, b;
+      const a = [...i.children], f = a.find((E) => E.className.includes("split_paneL")), p = a.find((E) => E.className.includes("split_paneR")), w = !((T = f == null ? void 0 : f.querySelector(".split_view_content_wrapper")) != null && T.firstElementChild), d = !((b = p == null ? void 0 : p.querySelector(".split_view_content_wrapper")) != null && b.firstElementChild);
       return !!(!f && !p || !p && w || !f && d || w && d);
     }
     return (i, a) => (ne(), _t(P(hs), {
@@ -2071,10 +2040,10 @@ const gs = { class: "placeholder_default flex a-c j-c" }, ms = {
 export {
   ln as Split,
   hs as SplitWindow,
-  vs as VueDragSplit,
+  bs as VueDragSplit,
   Es as default,
   ae as dropPositionMap,
-  bs as eventMap,
+  vs as eventMap,
   _s as formatInsetCss,
   M as getParentElByClname,
   q as splitDirectionMap
